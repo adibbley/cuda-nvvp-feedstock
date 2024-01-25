@@ -1,6 +1,6 @@
 {% set name = "cuda-nvvp" %}
-{% set version = "12.2.142" %}
-{% set cuda_version = "12.2" %}
+{% set version = "12.3.101" %}
+{% set cuda_version = "12.3" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
 {% set platform = "windows-x86_64" %}  # [win]
@@ -13,9 +13,9 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvvp/{{ platform }}/cuda_nvvp-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: a5afc346567aa1a0129b901c2ea2246e69c49b21451e93cafd15c2c7cc3776e2  # [linux64]
-  sha256: 7a2d6cc4ca2b9c907f68cb82ee861283d746e6a99f9fc1f7090ae4bfeafa3bbf  # [ppc64le]
-  sha256: 0be4646875789d14013c70040e9e61abb4ebd4892e2418a5d4238a73ade44058  # [win]
+  sha256: d186cae0f9a641b2777080272d6aab90955ebafa45667639c2326577e078dbe7  # [linux64]
+  sha256: 5ddbd92cc6ddce5530f38bd2e874021b7927fd60b4d4eb22805c043317347cbb  # [ppc64le]
+  sha256: 6b05de592c734373ba4cad2df7cd5383916e95bbe6fbdc7def68f0fa16d76fc7  # [win]
 
 build:
   number: 0
