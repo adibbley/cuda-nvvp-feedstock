@@ -17,7 +17,8 @@ source:
   sha256: 30145b90dd0439ca1389f2eed67d40fd03888798a7853ffac3d1221bd618e860  # [win]
 
 build:
-  number: 0
+  number: 1
+  binary_relocation: false
   skip: true  # [osx or aarch64 or ppc64le]
 
 requirements:
@@ -33,9 +34,14 @@ requirements:
     - cuda-nvprof
 
 test:
+  requires:
+    - patchelf                                        # [linux]
+  files:
+    - test-rpath.sh                                   # [linux]
   commands:
     - test -f $PREFIX/bin/nvvp      # [linux]
     - test -f $PREFIX/libnvvp/nvvp  # [linux]
+    - bash test-rpath.sh            # [linux]
     - if not exist %LIBRARY_BIN%\nvvp.bat exit 1     # [win]
     - if not exist %PREFIX%\libnvvp\nvvp.exe exit 1  # [win]
 
